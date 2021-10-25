@@ -10,7 +10,6 @@ def index():
 def read_all_users():
     # call the get all classmethod to get all friends
     users = User.get_all()
-    print(users)
     return render_template("readAll.html", all_users = users)
 
 @app.route('/new/user')
@@ -20,7 +19,7 @@ def new():
 
 @app.route('/create/user', methods=["POST"])
 def create_user():
-    # First we make a data dictionary from our request.form coming from our template.
+    # we create a data dictionary from our request.form coming from our template.
     # The keys in data need to line up exactly with the variables in our query string.
     data = {
         "fname": request.form["fname"],
