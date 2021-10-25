@@ -26,10 +26,10 @@ def create_user():
         "lname" : request.form["lname"],
         "email" : request.form["email"]
     }
-    # We pass the data dictionary into the save method from the Friend class.
+    # We pass the data dictionary into the save method from the User class.
     
     User.save(data)
-    # Don't forget to redirect after saving to the database.
+    # redirect after saving to the database.
     return redirect('/users')
     
             
