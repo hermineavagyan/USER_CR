@@ -4,48 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read All the Users</title>
+    <title>Read All Dojos</title>
 </head>
 <body>
-    <h1>All Users</h1>
+    <h1>Dojos and Ninjas</h1>
+    <div>
+        <h2>New Dojo</h2>
+        <form action="/create/dojo" method="POST">
+           <p><label for="name">Name:</label></p> 
+            <input type="text" name="name" id="name">
+            <p><input type="submit" value="Create a dojo"></p>
+        </form>
+    </div>
+<div>
+    <h2>All Dojos</h2>
     <table border="<i class="fas fa-wifi-1"></i>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Created at</th>
-                <th>Actions</th>
+                
+                <th>Dojo Name</th>
+                
                 
             </tr>
         </thead>
         <tbody>
-            {% for one_user in all_users %}
+            {% for one_dojo in all_dojos %}
                 <tr>
-                <td>{{one_user.id}}</td>
-                    <td>{{one_user.first_name}}</td>
-                    <td>{{one_user.last_name}}</td>
-                    <td>{{one_user.email}}</td>
-                    <td>{{one_user.created_at}}</td>
-                    <td><a href="/show/{{one_user.id}}">Show</a>
-                        <a href="/users/{{one_user.id}}/edit_page">Edit</a>
-                        <!-- <a href="/users/{{one_user.id}}/edit">Edit</a> -->
-                        <!-- <a href="/delete/{{one_user.id}}" class="btn btn-primary">Delete</a> -->
-                        <!-- <form action="/users/{{one_user.id}}/edit" method="POST">
-                            <input type="submit" value="Edit">
-                            
-                        </form> -->
-                        <form action="/users/{{one_user.id}}/delete" method="POST">
-                            <input type="submit" value="Delete">
-                        </form>
-                    </td>
+                <td><a href="/show/{{one_dojo.id}}" class="btn btn-primary">{{one_dojo.name}}</a></td>
+
                 </tr>
                 
             {% endfor %}
         </tbody>
     </table>
-    <a href="/new/user" class="btn btn-primary">Add a New User</a>
-    <!-- <a href="/delete/{{user_id}}" class="btn btn-primary">Delete a User</a> -->
+    <a href="/new_ninja" class="btn btn-primary">Add a Ninja</a>
+   
+</div>
 </body>
 </html>
