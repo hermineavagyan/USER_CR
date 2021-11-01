@@ -1,4 +1,4 @@
-from flask_app.controllers import dojos,ninjas
+from flask_app.controllers import authors,books
 from flask_app import app
 
 
